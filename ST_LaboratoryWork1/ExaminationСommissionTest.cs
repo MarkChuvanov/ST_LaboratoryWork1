@@ -76,7 +76,7 @@ namespace ST_LaboratoryWork1
 		{
 			examinationCommission.Students.Add(new Student { Name = "Наумов Антон Владимирович", IsAdmitted = true, Mark = null });
 			examinationCommission.RateStudent("Наумов Антон Владимирович", 2);
-			Assert.AreEqual(2, examinationCommission.Students.Last());
+			Assert.AreEqual(2, examinationCommission.Students.Last().Mark);
 			Assert.Throws<Exception>(() => examinationCommission.RateStudent("Пупкин Василий Иванович", 5));
 		}
 	}
