@@ -363,6 +363,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
+      "Microsoft.CodeCoverage >= 16.11.0",
       "Microsoft.NET.Test.Sdk >= 16.11.0",
       "NUnit >= 3.13.2",
       "NUnit3TestAdapter >= 4.0.0"
@@ -374,11 +375,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\ST_LaboratoryWork1\\ST_LaboratoryWork1\\ST_LaboratoryWork1\\ST_LaboratoryWork1.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\ST_LaboratoryWork1\\ST_LaboratoryWork1\\ST_LaboratoryWork1.csproj",
       "projectName": "ST_LaboratoryWork1",
-      "projectPath": "C:\\Users\\User\\Documents\\ST_LaboratoryWork1\\ST_LaboratoryWork1\\ST_LaboratoryWork1\\ST_LaboratoryWork1.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\ST_LaboratoryWork1\\ST_LaboratoryWork1\\ST_LaboratoryWork1.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\ST_LaboratoryWork1\\ST_LaboratoryWork1\\ST_LaboratoryWork1\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\ST_LaboratoryWork1\\ST_LaboratoryWork1\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -401,6 +402,10 @@
     "frameworks": {
       "net472": {
         "dependencies": {
+          "Microsoft.CodeCoverage": {
+            "target": "Package",
+            "version": "[16.11.0, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[16.11.0, )"
