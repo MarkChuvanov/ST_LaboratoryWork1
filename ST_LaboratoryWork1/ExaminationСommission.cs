@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ST_LaboratoryWork1
@@ -86,7 +87,7 @@ namespace ST_LaboratoryWork1
 		{
 			if (student == null)
 			{
-				throw new System.NullReferenceException();
+				throw new NullReferenceException();
 			}
 			students.Add(student);
 		}
@@ -95,9 +96,31 @@ namespace ST_LaboratoryWork1
 		{
 			if (member == null)
 			{
-				throw new System.NullReferenceException();
+				throw new NullReferenceException();
 			}
 			commission.Add(member);
+		}
+
+		public void RateStudent (string fullName, int rate)
+		{
+			if (!IsStudentExists(fullName))
+			{
+				throw new Exception("Такого студента не существует");
+			}
+			else
+			{
+				students.Where(s => s.Name == fullName).FirstOrDefault().Mark = rate;
+			}
+		}
+
+		public bool IsStudentExists (string fullName)
+		{
+			return students.Exists(s => s.Name == fullName);
+		}
+
+		public bool IsCommissionMemberExists(string fullName)
+		{
+			return commission.Exists(m => m.Name == fullName);
 		}
 	}
 }

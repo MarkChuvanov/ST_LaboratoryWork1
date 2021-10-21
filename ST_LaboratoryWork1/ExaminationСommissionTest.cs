@@ -55,6 +55,7 @@ namespace ST_LaboratoryWork1
 		public void AddStudentTest ()
 		{
 			examinationCommission.AddStudent(new Student { Name = "Наумов Антон Владимирович", IsAdmitted = true, Mark = 2 });
+			Assert.IsTrue(examinationCommission.IsStudentExists("Наумов Антон Владимирович"));
 			Assert.IsNotNull(examinationCommission.Students.Last());
 			Assert.Throws<NullReferenceException>(() => examinationCommission.AddStudent(null));
 			Assert.IsNotNull(examinationCommission.Students.Last());
@@ -64,9 +65,19 @@ namespace ST_LaboratoryWork1
 		public void AddMemberOfCommisionTest ()
 		{
 			examinationCommission.AddMemberOfCommision(new CommissionMember { Name = "Быков Артем Александрович", Duty = "доцент" });
+			Assert.IsTrue(examinationCommission.IsCommissionMemberExists("Быков Артем Александрович"));
 			Assert.IsNotNull(examinationCommission.Commission.Last());
 			Assert.Throws<NullReferenceException>(() => examinationCommission.AddMemberOfCommision(null));
 			Assert.IsNotNull(examinationCommission.Commission.Last());
+		}
+
+		[Test]
+		public void RateStudentTest ()
+		{
+			examinationCommission.Students.Add(new Student { Name = "Наумов Антон Владимирович", IsAdmitted = true, Mark = null });
+			examinationCommission.RateStudent("Наумов Антон Владимирович", 2);
+			Assert.AreEqual(2, examinationCommission.Students.Last());
+			Assert.Throws<Exception>(() => examinationCommission.RateStudent("Пупкин Василий Иванович", 5));
 		}
 	}
 }
