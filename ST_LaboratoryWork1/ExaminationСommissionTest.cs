@@ -66,7 +66,7 @@ namespace ST_LaboratoryWork1
 			examinationCommission.AddMemberOfCommision(new CommissionMember { Name = "Быков Артем Александрович", Duty = "доцент" });
 			Assert.IsNotNull(examinationCommission.Commission.Last());
 			Assert.Throws<NullReferenceException>(() => examinationCommission.AddMemberOfCommision(null));
-			Assert.IsNull(examinationCommission.Commission.Last());
+			Assert.IsNotNull(examinationCommission.Commission.Last());
 		}
 	}
 }
